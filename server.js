@@ -19,7 +19,7 @@ const jwtSecret = process.env.JWT_SECRET;
 // const mongoURI = process.env.MONGODB_URI ;
 
 let corsOptions = {
-  origin: ["https://679cdb670057a200884e63ba--gentle-paletas-c5fe54.netlify.app"],
+  origin: ["https://679ce5e8f78d390bf3574f88--lambent-malabi-59e440.netlify.app"],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
