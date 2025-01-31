@@ -16,7 +16,7 @@ const port = process.env.PORT || 5000;
 
 // Load environment variables
 const jwtSecret = process.env.JWT_SECRET;
-const mongoURI = process.env.MONGODB_URI ;
+// const mongoURI = process.env.MONGODB_URI ;
 
 let corsOptions = {
   origin: ["https://679cdb670057a200884e63ba--gentle-paletas-c5fe54.netlify.app"],
@@ -32,7 +32,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // MongoDB connection
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch((error) => console.error('MongoDB connection error:', error));
 
