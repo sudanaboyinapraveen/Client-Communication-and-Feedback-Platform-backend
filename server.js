@@ -15,10 +15,15 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Load environment variables
-const jwtSecret = process.env.JWT_SECRET || 'your_jwt_secret_key';
-const mongoURI = process.env.MONGODB_URI || "mongodb+srv://p14222901:dkQhQnzN3DYkv6lC@cluster0.6t5al.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const jwtSecret = process.env.JWT_SECRET;
+const mongoURI = process.env.MONGODB_URI ;
 
-app.use(cors());
+let corsOptions = {
+  origin: ["https://679cdb670057a200884e63ba--gentle-paletas-c5fe54.netlify.app"],
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(session({ secret: 'your_session_secret', resave: false, saveUninitialized: true }));
 
